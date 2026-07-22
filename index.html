@@ -2,8 +2,8 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cluster Green Villa Kualu | Hunian Subsidi Modern</title>
-    <meta property="og:type" content="website"><meta property="og:title" content="Green Villa Kualu | Hunian Subsidi Modern">
+    <title>Hunian Subsidi Premium & Asri di Green Kualu</title>
+    <meta property="og:type" content="website"><meta property="og:title" content="Hunian Subsidi Premium & Asri di Green Kualu">
     <meta property="og:description" content="Menghadirkan hunian subsidi dengan desain modern, tata ruang yang nyaman, dan lingkungan yang terus berkembang. DP mulai 1 Juta.">
     <meta property="og:image" content="https://dhanispace.github.io/kualu/img/l1.jpeg"><meta property="og:url" content="https://dhanispace.github.io/kualu/">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,7 +56,7 @@
         .promo-badge {display:inline-flex; align-items:center; gap:8px; background:transparent; color:var(--secondary-light); padding:9px 24px; border:1px solid var(--secondary); border-radius:50px; font-size:12px; font-weight:600; letter-spacing:2px; margin-bottom:32px; text-transform:uppercase;}
         .hero h1 {color:#fff; font-size:56px; line-height:1.2; margin-bottom:26px; font-weight:600;}
         .hero h1 em {font-style:italic; color:var(--secondary-light);}
-        .hero p {color:rgba(255,255,255,0.78); font-size:17px; margin-bottom:44px; font-weight:300; max-width:600px; margin-left:auto; margin-right:auto;}
+        .hero p {color:rgba(255,255,255,0.78); font-size:17px; margin-bottom:44px; font-weight:300; max-width:700px; margin-left:auto; margin-right:auto;}
         .hero-stats {display:flex; justify-content:center; gap:50px; margin-bottom:44px; flex-wrap:wrap;}
         .hero-stat {text-align:center;} .hero-stat .num {font-family:'Cormorant Garamond',serif; font-size:32px; color:var(--secondary-light); font-weight:600; display:block;}
         .hero-stat .label {font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.55);}
@@ -103,7 +103,8 @@
         .gallery-item .cap {position:absolute; bottom:16px; left:18px; color:#fff; font-family:'Cormorant Garamond',serif; font-size:17px; opacity:0; transform:translateY(10px); transition:var(--transition);}
         .gallery-item:hover .cap {opacity:1; transform:translateY(0);}
 
-        .video-wrapper {margin:36px auto 0; position:relative; width:100%; max-width:640px; aspect-ratio:4/3; overflow:hidden; border-radius:4px; box-shadow:0 25px 60px rgba(15,44,38,0.18); background:#000;}
+        /* Rasio video 3:4.5 */
+        .video-wrapper {margin:36px auto 0; position:relative; width:100%; max-width:400px; aspect-ratio:3/4.5; overflow:hidden; border-radius:4px; box-shadow:0 25px 60px rgba(15,44,38,0.18); background:#000;}
         .video-wrapper video, .video-wrapper iframe {position:absolute; top:0; left:0; width:100%; height:100%; border:none; object-fit:cover;}
 
         .map-container {border-radius:4px; overflow:hidden; box-shadow:0 15px 40px rgba(15,44,38,0.1); filter:grayscale(15%) contrast(1.05);}
@@ -119,9 +120,7 @@
         .btn-wa, .btn-ig {padding:15px 36px; border-radius:2px; font-size:13px; font-weight:600; display:flex; align-items:center; gap:10px; transition:var(--transition); text-transform:uppercase; letter-spacing:1.5px; background:transparent; border:1px solid var(--secondary); color:var(--secondary-light);}
         .btn-wa:hover, .btn-ig:hover {background:var(--secondary); color:var(--primary-deep); transform:translateY(-2px);}
 
-        .floating-wa, .floating-music {position:fixed; bottom:30px; border-radius:50%; display:flex; justify-content:center; align-items:center; z-index:1000; transition:var(--transition);}
-        .floating-wa {right:30px; background:#25D366; color:#fff; width:58px; height:58px; font-size:27px; box-shadow:0 12px 30px rgba(37,211,102,0.35);}
-        .floating-wa:hover {transform:scale(1.1) translateY(-4px);}
+        .floating-music {position:fixed; bottom:30px; border-radius:50%; display:flex; justify-content:center; align-items:center; z-index:1000; transition:var(--transition);}
         .floating-music {left:30px; background:var(--primary); color:var(--secondary-light); width:48px; height:48px; font-size:18px; box-shadow:0 8px 24px rgba(15,44,38,0.25); cursor:pointer; border:1px solid var(--secondary);}
         .floating-music:hover {background:var(--secondary); color:var(--primary-deep);}
         .music-playing {animation:pulse 2.2s infinite;}
@@ -139,36 +138,36 @@
             .section-header h2 {font-size:32px;}
             .address-box {flex-direction:column; text-align:center; padding:26px; margin-top:24px;}
             .promo-banner {padding:40px 26px;}
-            .floating-music {bottom:100px; left:20px;} .floating-wa {bottom:20px; right:20px;}
+            .floating-music {bottom:20px; left:20px;}
             .scroll-cue {display:none;}
         }
     </style>
 </head>
 <body>
-    <audio id="bgMusic" loop preload="auto"><source src="https://cdn.pixabay.com/download/audio/2022/05/16/audio_4af861d9a0.mp3?filename=beautiful-piano-111162.mp3" type="audio/mpeg"></audio>
+    <!-- Ditambahkan atribut autoplay agar berusaha memutar sejak awal -->
+    <audio id="bgMusic" loop autoplay preload="auto"><source src="https://cdn.pixabay.com/download/audio/2022/05/16/audio_4af861d9a0.mp3?filename=beautiful-piano-111162.mp3" type="audio/mpeg"></audio>
     <div class="floating-music" id="musicToggle" title="Putar/Hentikan Musik"><i class="fas fa-music"></i></div>
-    <a href="https://wa.me/6281170738999?text=Halo,%20saya%20tertarik%20dengan%20Promo%20DP%201%20Juta%20Perumahan%20Green%20Villa%20Kualu" class="floating-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <nav class="navbar" id="navbar">
         <div class="logo">Green Villa <span>Kualu</span></div>
         <div class="menu-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
         <ul class="nav-links" id="nav-links">
             <li><a href="#home">Beranda</a></li><li><a href="#tentang">Mengapa Kami</a></li><li><a href="#galeri">Galeri</a></li>
-            <li><a href="#lokasi">Lokasi</a></li><li><a href="#kontak" class="btn-nav">Hubungi Marketing</a></li>
+            <li><a href="#lokasi">Lokasi</a></li><li><a href="https://wa.me/6281170738999" target="_blank" class="btn-nav">Lihat Rumahnya</a></li>
         </ul>
     </nav>
 
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="promo-badge"><i class="fas fa-crown"></i> Promo Eksklusif &mdash; DP Hanya Rp1 Juta</div>
-            <h1>Hunian Subsidi <em>Modern</em><br>untuk Kehidupan yang Lebih Baik</h1>
-            <p>Desain masa kini, tata ruang yang nyaman, dan lingkungan yang terus berkembang &mdash; hadir di jantung Kampar, Riau, sebagai fondasi awal keluarga Anda.</p>
+            <h1>Hunian Subsidi Premium & Asri<br>di <em>Green Kualu</em></h1>
+            <p>Menghadirkan hunian subsidi dengan desain modern, tata ruang yang nyaman, dan lingkungan yang terus berkembang. Solusi ideal bagi Anda yang menginginkan rumah pertama dengan kualitas yang dapat diandalkan.</p>
             <div class="hero-stats">
                 <div class="hero-stat"><span class="num">1 Jt</span><span class="label">DP Mulai Dari</span></div>
                 <div class="hero-stat"><span class="num">100%</span><span class="label">Legalitas Resmi</span></div>
                 <div class="hero-stat"><span class="num">KPR</span><span class="label">Subsidi Pemerintah</span></div>
             </div>
-            <div class="hero-buttons"><a href="#kontak" class="btn-primary">Jadwalkan Kunjungan</a><a href="https://wa.me/6281170738999" target="_blank" class="btn-outline-light">Hubungi Marketing</a></div>
+            <div class="hero-buttons"><a href="#kontak" class="btn-primary">Jadwalkan Kunjungan</a><a href="https://wa.me/6281170738999" target="_blank" class="btn-outline-light">Lihat Rumahnya</a></div>
         </div>
         <div class="scroll-cue"><span>Jelajahi</span><div class="line"></div></div>
     </section>
@@ -177,22 +176,26 @@
 
     <section id="tentang">
         <div class="motif-bg"></div>
-        <div class="section-header"><span class="motif-eyebrow">Nilai Lebih</span><h2>Mengapa Green Villa Kualu?</h2><div class="motif-divider"></div>
+        <div class="section-header"><span class="motif-eyebrow">Nilai Lebih</span><h2>Hunian Subsidi dengan Nilai Lebih</h2><div class="motif-divider"></div>
             <p class="subtitle">Green Villa Kualu dirancang untuk memberikan lebih dari sekadar tempat tinggal. Setiap unit mengutamakan kenyamanan, fungsi, dan kualitas, sehingga menjadi pilihan tepat untuk membangun masa depan keluarga.</p>
         </div>
+        
+        <h3 style="text-align: center; margin-bottom: 30px; font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--primary);">Mengapa Green Villa Kualu?</h3>
+        
         <div class="features">
-            <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-home"></i></div><h3>Desain Modern</h3><p>Hunian subsidi dengan fasad bergaya masa kini yang elegan dan tata ruang yang sangat fungsional.</p></div>
-            <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-leaf"></i></div><h3>Nyaman &amp; Tertata</h3><p>Menciptakan lingkungan yang asri, aman, dan nyaman untuk tempat tumbuh kembang optimal keluarga Anda.</p></div>
-            <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-map-marked-alt"></i></div><h3>Akses Strategis</h3><p>Mobilitas tinggi berkat lokasi yang berdekatan dengan berbagai fasilitas umum, pendidikan, dan pusat perbelanjaan.</p></div>
-            <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-file-signature"></i></div><h3>Legalitas Jelas</h3><p>Proyek resmi dengan surat menyurat lengkap, menjamin keamanan transaksi dan proses KPR yang jauh lebih mudah.</p></div>
-            <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-chart-line"></i></div><h3>Investasi Menjanjikan</h3><p>Sangat cocok diwujudkan sebagai rumah pertama Anda maupun instrumen investasi cerdas di masa depan.</p></div>
+            <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-home"></i></div><h3>Desain Modern</h3><p>Hunian subsidi dengan desain modern yang elegan dan tata ruang yang fungsional.</p></div>
+            <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-leaf"></i></div><h3>Nyaman &amp; Tertata</h3><p>Lingkungan yang nyaman dan tertata untuk tempat tumbuh kembang optimal keluarga Anda.</p></div>
+            <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-map-marked-alt"></i></div><h3>Akses Strategis</h3><p>Akses strategis ke berbagai fasilitas umum, pendidikan, dan pusat perbelanjaan.</p></div>
+            <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-file-signature"></i></div><h3>Legalitas Jelas</h3><p>Legalitas jelas dan proses KPR mudah, menjamin keamanan transaksi Anda.</p></div>
+            <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-chart-line"></i></div><h3>Pilihan Tepat</h3><p>Cocok sebagai rumah pertama maupun instrumen investasi cerdas di masa depan.</p></div>
         </div>
+        
         <div class="promo-banner">
-            <h3>Kemudahan Memiliki Hunian</h3><p>Miliki hunian subsidi impian Anda sekarang dengan proses yang sangat mudah dan transparan.</p>
+            <h3>Kemudahan Memiliki Hunian</h3><p>Miliki hunian subsidi impian dengan proses yang mudah.</p>
             <ul class="promo-list">
-                <li><i class="fas fa-check-circle"></i> <span><strong>DP Sangat Ringan:</strong> Mulai Rp1 Juta Saja*</span></li>
-                <li><i class="fas fa-check-circle"></i> <span><strong>Angsuran Nyaman:</strong> Cicilan terjangkau sesuai ketentuan resmi KPR subsidi.</span></li>
-                <li><i class="fas fa-check-circle"></i> <span><strong>Layanan Penuh:</strong> Anda dibantu penuh oleh tim kami dari proses pengajuan hingga akad.</span></li>
+                <li><i class="fas fa-check-circle"></i> <span><strong>DP mulai Rp1 Juta*</strong></span></li>
+                <li><i class="fas fa-check-circle"></i> <span><strong>Cicilan terjangkau sesuai ketentuan KPR subsidi</strong></span></li>
+                <li><i class="fas fa-check-circle"></i> <span><strong>Dibantu proses pengajuan hingga akad</strong></span></li>
             </ul>
         </div>
     </section>
@@ -232,8 +235,7 @@
             <h2>Awali Perjalanan Baru Bersama Green Villa Kualu</h2>
             <p>Hunian subsidi bukan hanya tentang harga yang terjangkau, tetapi juga tentang kenyamanan, kualitas, dan tempat terbaik untuk memulai kehidupan yang lebih baik.</p>
             <div class="contact-buttons">
-                <a href="https://wa.me/6281170738999?text=Halo,%20saya%20tertarik%20untuk%20jadwal%20kunjungan%20ke%20Green%20Villa%20Kualu" target="_blank" class="btn-wa"><i class="fab fa-whatsapp" style="font-size:18px;"></i> Jadwalkan Kunjungan</a>
-                <a href="https://instagram.com/tiaranie_c" target="_blank" class="btn-ig"><i class="fab fa-instagram" style="font-size:18px;"></i> Instagram Kami</a>
+                <a href="https://wa.me/6281170738999?text=Halo,%20saya%20tertarik%20untuk%20jadwal%20kunjungan%20ke%20Green%20Villa%20Kualu" target="_blank" class="btn-wa"><i class="fab fa-whatsapp" style="font-size:18px;"></i> Jadwalkan Kunjungan Sekarang</a>
             </div>
         </div>
     </section>
@@ -254,31 +256,38 @@
             btnMusic.innerHTML = playing ? '<i class="fas fa-volume-up"></i>' : '<i class="fas fa-music"></i>';
         }
 
-        // Coba autoplay dalam kondisi muted (browser umumnya izinkan ini),
-        // lalu unmute begitu playback berjalan, sehingga musik terasa "langsung main".
-        function tryAutoplay(){
-            audio.muted = true;
-            audio.play().then(()=>{
-                setTimeout(()=>{ audio.muted = false; setPlayingUI(true); }, 250);
-            }).catch(()=>{ setPlayingUI(false); });
+        // Coba autoplay kuat untuk memutar lagu setelah klik tautan atau load
+        function forcePlayMusic() {
+            audio.muted = false;
+            audio.play().then(() => {
+                setPlayingUI(true);
+            }).catch(() => {
+                setPlayingUI(false);
+            });
         }
-        window.addEventListener('DOMContentLoaded', tryAutoplay);
 
-        // Fallback: interaksi pertama apapun (klik, sentuh, scroll, keydown) memastikan musik jalan & unmuted
-        const resumeOnInteract = ()=>{
-            if(audio.paused || audio.muted){
-                audio.muted = false;
-                audio.play().then(()=> setPlayingUI(true)).catch(()=>{});
-            }
-        };
-        ['click','touchstart','scroll','keydown'].forEach(evt=>{
-            window.addEventListener(evt, resumeOnInteract, {once:true, passive:true});
+        window.addEventListener('DOMContentLoaded', () => {
+            // Coba putar ketika dimuat
+            audio.muted = true;
+            audio.play().then(() => {
+                setTimeout(() => { audio.muted = false; setPlayingUI(true); }, 150);
+            }).catch(() => { setPlayingUI(false); });
         });
 
-        btnMusic.onclick=(e)=>{
+        // Tangkap interaksi pengunjung (termasuk klik di bagian mana saja) untuk memastikan lagu unmuted/berputar
+        const resumeOnInteract = () => {
+            if(audio.paused || audio.muted){
+                forcePlayMusic();
+            }
+        };
+        ['click', 'touchstart', 'scroll', 'keydown'].forEach(evt => {
+            window.addEventListener(evt, resumeOnInteract, { once: true, passive: true });
+        });
+
+        btnMusic.onclick = (e) => {
             e.stopPropagation();
             if(isPlay){ audio.pause(); setPlayingUI(false); }
-            else { audio.muted=false; audio.play().then(()=> setPlayingUI(true)).catch(()=>{}); }
+            else { forcePlayMusic(); }
         };
     </script>
 </body>
