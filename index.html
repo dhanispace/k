@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     
+    <!-- Tambahan Style Khusus untuk Fitur Baru & Optimasi Tombol -->
     <style>
         /* Optimasi Tombol Transparan */
         .btn-outline-wa, .btn-outline-ig {
@@ -62,36 +63,132 @@
             border: none;
             object-fit: cover;
         }
+
+        /* Kotak Alamat di Bawah Peta */
+        .address-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            margin-top: 25px;
+            border-left: 5px solid #FF8C00;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            transition: transform 0.3s ease;
+        }
+        .address-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+        .address-box i {
+            font-size: 35px;
+            color: #2E7D32;
+            background: #E8F5E9;
+            padding: 15px;
+            border-radius: 50%;
+        }
+        .address-box h4 {
+            color: #2E7D32;
+            margin-bottom: 5px;
+            font-size: 18px;
+            font-family: 'Playfair Display', sans-serif;
+            font-weight: 800;
+        }
+        .address-box p {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Tombol WhatsApp Melayang (Floating WA) */
+        .floating-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: bounceWA 2s infinite;
+        }
+        .floating-wa:hover {
+            background-color: #1ebe57;
+            color: #fff;
+            transform: scale(1.1);
+            animation: none;
+        }
+        @keyframes bounceWA {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-12px); }
+            60% { transform: translateY(-6px); }
+        }
+
+        @media (max-width: 768px) {
+            .address-box {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+                padding: 20px;
+            }
+            .floating-wa { bottom: 20px; right: 20px; width: 55px; height: 55px; font-size: 30px; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Definisi Corak Batik (Disembunyikan dengan aman menggunakan display: none) -->
+    <!-- Definisi Corak Batik / Hiasan Bunga (Telah Dipercantik Menjadi Bunga Mandala) -->
     <svg style="display: none;" aria-hidden="true">
         <defs>
             <pattern id="batik-kawung" width="36" height="36" patternUnits="userSpaceOnUse">
                 <rect width="36" height="36" fill="#f4f7f6"/>
-                <g fill="none" stroke="#2E7D32" stroke-width="1.2" opacity="0.55">
+                <g fill="none" stroke="#2E7D32" stroke-width="1.2" opacity="0.65">
                     <ellipse cx="18" cy="8" rx="7.5" ry="8.5"/>
                     <ellipse cx="18" cy="28" rx="7.5" ry="8.5"/>
                     <ellipse cx="8" cy="18" rx="8.5" ry="7.5"/>
                     <ellipse cx="28" cy="18" rx="8.5" ry="7.5"/>
                 </g>
-                <circle cx="18" cy="18" r="3" fill="#FF8C00" opacity="0.8"/>
+                <circle cx="18" cy="18" r="3.5" fill="#FF8C00" opacity="0.9"/>
             </pattern>
-            <symbol id="batik-medallion" viewBox="0 0 56 56">
-                <circle cx="28" cy="28" r="26" fill="#f4f7f6" stroke="#FF8C00" stroke-width="2"/>
-                <circle cx="28" cy="28" r="21" fill="none" stroke="#2E7D32" stroke-width="1" opacity="0.35"/>
-                <g fill="none" stroke="#2E7D32" stroke-width="1.5" opacity="0.85">
-                    <ellipse cx="28" cy="15.5" rx="9" ry="10"/>
-                    <ellipse cx="28" cy="40.5" rx="9" ry="10"/>
-                    <ellipse cx="15.5" cy="28" rx="10" ry="9"/>
-                    <ellipse cx="40.5" cy="28" rx="10" ry="9"/>
+
+            <!-- Hiasan Bunga (Mandala Floral) yang Lebih Menarik & Mewah -->
+            <symbol id="batik-medallion" viewBox="0 0 64 64">
+                <!-- Cincin Luar -->
+                <circle cx="32" cy="32" r="30" fill="#f4f7f6" stroke="#2E7D32" stroke-width="1.5" stroke-dasharray="3 3"/>
+                <circle cx="32" cy="32" r="26" fill="#fff" stroke="#FF8C00" stroke-width="2"/>
+                
+                <!-- 8 Kelopak Bunga (Petals) -->
+                <g fill="none" stroke="#2E7D32" stroke-width="2" opacity="0.85">
+                    <ellipse cx="32" cy="32" rx="6" ry="21" transform="rotate(0 32 32)"/>
+                    <ellipse cx="32" cy="32" rx="6" ry="21" transform="rotate(45 32 32)"/>
+                    <ellipse cx="32" cy="32" rx="6" ry="21" transform="rotate(90 32 32)"/>
+                    <ellipse cx="32" cy="32" rx="6" ry="21" transform="rotate(135 32 32)"/>
                 </g>
-                <circle cx="28" cy="28" r="4" fill="#FF8C00"/>
+                
+                <!-- Putik / Bagian Tengah Bunga -->
+                <circle cx="32" cy="32" r="8" fill="#E8F5E9" stroke="#FF8C00" stroke-width="1.5"/>
+                <circle cx="32" cy="32" r="4" fill="#FF8C00"/>
             </symbol>
         </defs>
     </svg>
+
+    <!-- Tombol WhatsApp Melayang (Floating WA) -->
+    <a href="https://wa.me/6281170738999?text=Halo,%20saya%20tertarik%20dengan%20Promo%20DP%201%20Juta%20Perumahan%20Green%20Villa%20Kualu" class="floating-wa" target="_blank" aria-label="Chat WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <!-- Navbar -->
     <nav class="navbar">
@@ -128,10 +225,10 @@
         </div>
     </section>
 
-    <!-- Pita Batik 1 -->
+    <!-- Pita Bunga 1 -->
     <div class="batik-ribbon" style="position:relative; line-height:0;">
         <svg width="100%" height="26" preserveAspectRatio="none" style="display:block;" aria-hidden="true"><rect width="100%" height="100%" fill="url(#batik-kawung)"></rect></svg>
-        <svg width="56" height="56" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); filter:drop-shadow(0 2px 4px rgba(0,0,0,0.15));" aria-hidden="true"><use href="#batik-medallion"></use></svg>
+        <svg width="64" height="64" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); filter:drop-shadow(0 4px 6px rgba(0,0,0,0.15));" aria-hidden="true"><use href="#batik-medallion"></use></svg>
     </div>
 
     <!-- Keunggulan Section -->
@@ -156,10 +253,10 @@
         </div>
     </section>
 
-    <!-- Pita Batik 2 -->
+    <!-- Pita Bunga 2 -->
     <div class="batik-ribbon" style="position:relative; line-height:0;">
         <svg width="100%" height="26" preserveAspectRatio="none" style="display:block;" aria-hidden="true"><rect width="100%" height="100%" fill="url(#batik-kawung)"></rect></svg>
-        <svg width="56" height="56" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); filter:drop-shadow(0 2px 4px rgba(0,0,0,0.15));" aria-hidden="true"><use href="#batik-medallion"></use></svg>
+        <svg width="64" height="64" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); filter:drop-shadow(0 4px 6px rgba(0,0,0,0.15));" aria-hidden="true"><use href="#batik-medallion"></use></svg>
     </div>
 
     <!-- Galeri & Video Section -->
@@ -202,8 +299,18 @@
             <div class="motif-divider" aria-hidden="true"></div>
             <p class="subtitle">Perumahan Cluster Green Villa Kualu. Akses mudah ke berbagai fasilitas umum.</p>
         </div>
+        
         <div class="map-container">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7205731456766!2d101.36743109999999!3d0.40106440000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5a7ae843797bd%3A0x1105983cef4ff9a5!2sPerumahan%20Cluster%20Green%20Villa%20Kualu!5e0!3m2!1sen!2sid!4v1784694528622!5m2!1sen!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+
+        <!-- Tambahan: Alamat Tertulis -->
+        <div class="address-box">
+            <i class="fas fa-map-marked-alt"></i>
+            <div>
+                <h4>Alamat Proyek:</h4>
+                <p><strong>Cluster Green Villa Kualu</strong><br>Jl. Tambusai (Arah Kubang Raya), Desa Kualu, Kec. Tambang,<br>Kabupaten Kampar, Riau.</p>
+            </div>
         </div>
     </section>
 
@@ -226,10 +333,10 @@
         </div>
     </section>
 
-    <!-- Pita Batik 3 -->
+    <!-- Pita Bunga 3 -->
     <div class="batik-ribbon" style="position:relative; line-height:0;">
         <svg width="100%" height="26" preserveAspectRatio="none" style="display:block;" aria-hidden="true"><rect width="100%" height="100%" fill="url(#batik-kawung)"></rect></svg>
-        <svg width="56" height="56" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); filter:drop-shadow(0 2px 4px rgba(0,0,0,0.15));" aria-hidden="true"><use href="#batik-medallion"></use></svg>
+        <svg width="64" height="64" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); filter:drop-shadow(0 4px 6px rgba(0,0,0,0.15));" aria-hidden="true"><use href="#batik-medallion"></use></svg>
     </div>
 
     <footer>
