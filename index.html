@@ -3,60 +3,331 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cluster Green Villa Kualu</title>
+    <title>Cluster Green Villa Kualu | Hunian Eksklusif</title>
 
-    <!-- Open Graph (WhatsApp/FB/Telegram Preview) -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Cluster Green Villa Kualu | Rumah Subsidi DP 1 Juta">
-    <meta property="og:description" content="Hunian asri & modern di Desa Kualu, Tambang, Kampar. Lokasi strategis dekat Pekanbaru, tanah lega, spesifikasi berkualitas. Promo DP hanya 1 juta!">
+    <meta property="og:title" content="Cluster Green Villa Kualu | Rumah Eksklusif DP 1 Juta">
+    <meta property="og:description" content="Hunian asri & modern di Desa Kualu, Tambang, Kampar. Lokasi strategis, tanah lega, spesifikasi berkualitas premium.">
     <meta property="og:image" content="https://dhanispace.github.io/kualu/img/l1.jpeg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://dhanispace.github.io/kualu/">
-    <meta property="og:locale" content="id_ID">
-    <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     
-    <!-- Tambahan Style Khusus untuk Fitur Baru & Optimasi Tombol -->
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* Optimasi Tombol Transparan */
-        .btn-outline-wa, .btn-outline-ig {
-            background: transparent !important;
-            box-shadow: none !important;
-            transition: all 0.3s ease-in-out;
+        /* CSS Variabel untuk Tema Premium */
+        :root {
+            --primary: #1A3C34;      /* Deep Emerald */
+            --primary-light: #2c594f;
+            --secondary: #D4AF37;    /* Elegant Gold */
+            --secondary-dark: #b5952f;
+            --bg-light: #FAFAFA;     /* Off white */
+            --bg-card: #FFFFFF;
+            --text-dark: #222222;
+            --text-muted: #666666;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
-        .btn-outline-wa { border: 1.5px solid #25D366; color: #25D366 !important; }
-        .btn-outline-ig { border: 1.5px solid #e1306c; color: #e1306c !important; }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         
-        .btn-outline-wa i { color: #25D366; transition: all 0.3s ease-in-out; }
-        .btn-outline-ig i { color: #e1306c; transition: all 0.3s ease-in-out; }
-
-        .btn-outline-wa:hover {
-            background: #25D366 !important; color: #ffffff !important;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3) !important;
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
         }
-        .btn-outline-ig:hover {
-            background: #e1306c !important; color: #ffffff !important;
-            box-shadow: 0 5px 15px rgba(225, 48, 108, 0.3) !important;
-        }
-        .btn-outline-wa:hover i, .btn-outline-ig:hover i { color: #ffffff; }
 
-        /* Wadah Video Responsif (3:4) */
+        h1, h2, h3, h4, h5, h6, .logo {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .motif-eyebrow {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--secondary);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .section-header h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        .motif-divider {
+            height: 2px;
+            width: 60px;
+            background: var(--secondary);
+            margin: 0 auto 20px;
+        }
+        .subtitle {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 15px;
+        }
+
+        /* Navbar Berkelas */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            z-index: 999;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.03);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+        .logo span {
+            color: var(--secondary);
+            font-style: italic;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        .nav-links li a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: var(--transition);
+            position: relative;
+        }
+        .nav-links li a:hover {
+            color: var(--secondary);
+        }
+        .btn-nav {
+            background-color: var(--secondary);
+            color: #fff !important;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+        .btn-nav:hover {
+            background-color: var(--secondary-dark);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        .menu-toggle .bar {
+            width: 25px; height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        /* Hero Section Premium */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 0 20px;
+            background: linear-gradient(to bottom, rgba(26, 60, 52, 0.8), rgba(26, 60, 52, 0.95)), url('img/l1.jpeg') center/cover fixed;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin-top: 50px;
+        }
+        .promo-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #D4AF37, #F3E5AB);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+        .hero h1 {
+            color: #ffffff;
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            color: rgba(255,255,255,0.85);
+            font-size: 18px;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        .btn-primary {
+            background-color: var(--secondary);
+            color: #fff;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        .btn-primary:hover {
+            background-color: #fff;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Keunggulan (Features) */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            background: var(--bg-card);
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.02);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: var(--secondary);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(26, 60, 52, 0.08);
+        }
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+        .icon-wrapper {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--secondary);
+            transition: var(--transition);
+        }
+        .feature-card:hover .icon-wrapper {
+            background: var(--secondary);
+            color: #fff;
+        }
+        .feature-card h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .feature-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Gallery Premium */
+        .gallery {
+            background-color: #fff;
+            max-width: 100%;
+        }
+        .gallery-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .gallery-title {
+            text-align: center;
+            margin: 40px 0 20px;
+            font-size: 22px;
+            font-weight: 600;
+        }
+        .gallery-title i { color: var(--secondary); margin-right: 10px; }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        .gallery-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            cursor: pointer;
+        }
+        .gallery-grid img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Video Wrapper Berkualitas */
         .video-wrapper {
-            margin: 20px auto 0;
+            margin: 30px auto 0;
             position: relative;
             width: 100%;
-            max-width: 430px;
-            aspect-ratio: 3 / 4;
+            max-width: 800px;
+            aspect-ratio: 16 / 9;
             overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(26, 60, 52, 0.15);
             background-color: #000;
+            border: 4px solid #fff;
         }
-        .video-wrapper iframe, .video-wrapper video {
+        .video-wrapper video, .video-wrapper iframe {
             position: absolute;
             top: 0; left: 0;
             width: 100%; height: 100%;
@@ -64,146 +335,176 @@
             object-fit: cover;
         }
 
-        /* Kotak Alamat di Bawah Peta */
+        /* Lokasi & Alamat */
+        .map-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 4px solid #fff;
+        }
         .address-box {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 25px;
             background: #ffffff;
-            padding: 25px;
+            padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-            margin-top: 25px;
-            border-left: 5px solid #FF8C00;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-top: -40px;
+            position: relative;
+            z-index: 10;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
-            transition: transform 0.3s ease;
-        }
-        .address-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
         }
         .address-box i {
-            font-size: 35px;
-            color: #2E7D32;
-            background: #E8F5E9;
-            padding: 15px;
+            font-size: 30px;
+            color: var(--secondary);
+            background: rgba(212, 175, 55, 0.1);
+            padding: 20px;
             border-radius: 50%;
         }
         .address-box h4 {
-            color: #2E7D32;
             margin-bottom: 5px;
-            font-size: 18px;
-            font-family: 'Playfair Display', sans-serif;
-            font-weight: 800;
+            font-size: 20px;
         }
         .address-box p {
-            color: #555;
-            font-size: 14px;
-            line-height: 1.6;
-            margin: 0;
+            color: var(--text-muted);
+            font-size: 15px;
         }
 
-        /* Tombol WhatsApp Melayang (Floating WA) */
+        /* Kontak */
+        .contact {
+            background-color: var(--primary);
+            color: #fff;
+            text-align: center;
+            padding: 80px 20px;
+            max-width: 100%;
+        }
+        .contact-box {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .contact-box h2 {
+            color: var(--secondary);
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .contact-box p {
+            font-size: 16px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 40px;
+        }
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* Tombol Premium */
+        .btn-wa, .btn-ig {
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn-wa {
+            background: #25D366;
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+        }
+        .btn-wa:hover {
+            background: #1EBE57;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.5);
+        }
+        .btn-ig {
+            background: transparent;
+            color: var(--secondary);
+            border: 2px solid var(--secondary);
+        }
+        .btn-ig:hover {
+            background: var(--secondary);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* Floating WA */
         .floating-wa {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 30px; right: 30px;
             background-color: #25D366;
             color: #fff;
-            width: 60px;
-            height: 60px;
+            width: 60px; height: 60px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 35px;
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
+            font-size: 30px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
             z-index: 1000;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            animation: bounceWA 2s infinite;
+            transition: var(--transition);
         }
         .floating-wa:hover {
-            background-color: #1ebe57;
-            color: #fff;
-            transform: scale(1.1);
-            animation: none;
-        }
-        @keyframes bounceWA {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-12px); }
-            60% { transform: translateY(-6px); }
+            transform: scale(1.1) translateY(-5px);
         }
 
-        /* Corak Batik Khusus untuk Navbar */
-        .navbar {
-            background-color: rgba(255, 255, 255, 0.96) !important;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M20 0 A 20 20 0 0 1 40 20 A 20 20 0 0 1 20 40 A 20 20 0 0 1 0 20 A 20 20 0 0 1 20 0 Z' fill='none' stroke='%232E7D32' stroke-width='1' opacity='0.08'/%3E%3C/svg%3E") !important;
-            border-bottom: none !important;
-        }
-        /* Garis Pucuk Rebung di bawah Navbar */
-        .navbar::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; width: 100%; height: 5px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='5'%3E%3Cpath d='M0 5 L8 0 L16 5' fill='none' stroke='%23FF8C00' stroke-width='2'/%3E%3C/svg%3E") repeat-x;
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #112822;
+            color: rgba(255,255,255,0.5);
+            font-size: 14px;
         }
 
+        /* Ornamen Batik Elegan Tersembunyi di Latar */
+        .batik-ribbon {
+            width: 100%;
+            height: 40px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M20 0 A 20 20 0 0 1 40 20 A 20 20 0 0 1 20 40 A 20 20 0 0 1 0 20 A 20 20 0 0 1 20 0 Z' fill='none' stroke='%23D4AF37' stroke-width='1' opacity='0.2'/%3E%3C/svg%3E");
+            background-color: var(--primary);
+        }
+
+        /* Responsiveness */
         @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px; right: -100%;
+                background: #fff;
+                flex-direction: column;
+                width: 100%;
+                padding: 40px 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+                transition: 0.4s;
+            }
+            .nav-links.active { right: 0; }
+            .menu-toggle { display: flex; }
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 16px; }
             .address-box {
                 flex-direction: column;
                 text-align: center;
-                gap: 10px;
                 padding: 20px;
+                margin-top: 20px;
             }
-            .floating-wa { bottom: 20px; right: 20px; width: 55px; height: 55px; font-size: 30px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Definisi Corak Batik Geometris (Pucuk Rebung & Belah Ketupat Khas Riau) -->
-    <svg style="display: none;" aria-hidden="true">
-        <defs>
-            <pattern id="batik-kawung" width="36" height="36" patternUnits="userSpaceOnUse">
-                <rect width="36" height="36" fill="#f4f7f6"/>
-                <g fill="none" stroke="#2E7D32" stroke-width="1.2" opacity="0.65">
-                    <ellipse cx="18" cy="8" rx="7.5" ry="8.5"/>
-                    <ellipse cx="18" cy="28" rx="7.5" ry="8.5"/>
-                    <ellipse cx="8" cy="18" rx="8.5" ry="7.5"/>
-                    <ellipse cx="28" cy="18" rx="8.5" ry="7.5"/>
-                </g>
-                <circle cx="18" cy="18" r="3.5" fill="#FF8C00" opacity="0.9"/>
-            </pattern>
-
-            <!-- Hiasan Batik Belah Ketupat Khas Riau (Menggantikan Bunga) -->
-            <symbol id="batik-medallion" viewBox="0 0 64 64">
-                <!-- Latar belakang belah ketupat utama -->
-                <path d="M 32 2 L 62 32 L 32 62 L 2 32 Z" fill="#f4f7f6" stroke="#2E7D32" stroke-width="2"/>
-                <!-- Garis oranye dalam -->
-                <path d="M 32 8 L 56 32 L 32 56 L 8 32 Z" fill="none" stroke="#FF8C00" stroke-width="2.5"/>
-                <!-- Garis putus-putus hijau -->
-                <path d="M 32 14 L 50 32 L 32 50 L 14 32 Z" fill="none" stroke="#2E7D32" stroke-width="1.5" stroke-dasharray="3 3"/>
-                <!-- Inti tengah -->
-                <path d="M 32 22 L 42 32 L 32 42 L 22 32 Z" fill="#E8F5E9" stroke="#FF8C00" stroke-width="1.5"/>
-                <circle cx="32" cy="32" r="3" fill="#2E7D32"/>
-                <!-- Titik-titik penyempurna sudut (Ornamen Songket) -->
-                <circle cx="32" cy="14" r="2" fill="#2E7D32"/>
-                <circle cx="32" cy="50" r="2" fill="#2E7D32"/>
-                <circle cx="14" cy="32" r="2" fill="#2E7D32"/>
-                <circle cx="50" cy="32" r="2" fill="#2E7D32"/>
-            </symbol>
-        </defs>
-    </svg>
-
-    <!-- Tombol WhatsApp Melayang (Floating WA) -->
+    <!-- Tombol WhatsApp Melayang -->
     <a href="https://wa.me/6281170738999?text=Halo,%20saya%20tertarik%20dengan%20Promo%20DP%201%20Juta%20Perumahan%20Green%20Villa%20Kualu" class="floating-wa" target="_blank" aria-label="Chat WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Navbar dengan Corak Batik -->
+    <!-- Navbar Premium -->
     <nav class="navbar">
         <div class="logo">Green Villa <span>Kualu</span></div>
         <div class="menu-toggle" id="mobile-menu">
@@ -220,113 +521,117 @@
         </ul>
     </nav>
 
-    <!-- Hero Section dengan Corak Batik Kawung Transparan di Latar Belakang -->
-    <section id="home" class="hero" style="background: 
-        linear-gradient(rgba(35, 65, 45, 0.9), rgba(35, 65, 45, 0.85)), 
-        url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'60\' height=\'60\' viewBox=\'0 0 60 60\'%3E%3Ccircle cx=\'0\' cy=\'0\' r=\'25\' fill=\'none\' stroke=\'%23ffffff\' stroke-width=\'1.5\' opacity=\'0.15\'/%3E%3Ccircle cx=\'60\' cy=\'0\' r=\'25\' fill=\'none\' stroke=\'%23ffffff\' stroke-width=\'1.5\' opacity=\'0.15\'/%3E%3Ccircle cx=\'0\' cy=\'60\' r=\'25\' fill=\'none\' stroke=\'%23ffffff\' stroke-width=\'1.5\' opacity=\'0.15\'/%3E%3Ccircle cx=\'60\' cy=\'60\' r=\'25\' fill=\'none\' stroke=\'%23ffffff\' stroke-width=\'1.5\' opacity=\'0.15\'/%3E%3Ccircle cx=\'30\' cy=\'30\' r=\'25\' fill=\'none\' stroke=\'%23FF8C00\' stroke-width=\'1.5\' opacity=\'0.2\'/%3E%3Ccircle cx=\'30\' cy=\'30\' r=\'6\' fill=\'%23FF8C00\' opacity=\'0.2\'/%3E%3C/svg%3E'), 
-        url('img/l1.jpeg') center/cover fixed;">
-        
+    <!-- Hero Section -->
+    <section id="home" class="hero">
         <div class="hero-content">
             <div class="promo-badge">
-                <i class="fas fa-fire" style="color: #FF4500;"></i> PROMO SPESIAL: DP HANYA 1 JUTA!
+                <i class="fas fa-crown"></i> PROMO EKSKLUSIF: DP HANYA 1 JUTA
             </div>
-            <h1>Hunian Asri & Modern di Green Kualu</h1>
-            <p>Temukan kenyamanan hidup bersama keluarga di Perumahan Cluster Green Villa Kualu. Kawasan tertata, strategis, dan bebas banjir.</p>
+            <h1>Hunian Premium & Asri di Green Kualu</h1>
+            <p>Tingkatkan kualitas hidup keluarga Anda di Cluster Green Villa Kualu. Perpaduan desain modern, lokasi strategis, dan nilai investasi yang menjanjikan.</p>
             <a href="#galeri" class="btn-primary">Lihat Tipe Rumah</a>
         </div>
-        
-        <div class="custom-shape-divider-bottom" style="height: 90px;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-                <path fill="#f4f7f6" d="M0,90 C 180,130 360,150 540,140 C 720,130 780,60 960,55 C 1140,50 1260,90 1440,90 L1440,320 L0,320 Z"></path>
-            </svg>
-        </div>
     </section>
-
-    <!-- Pita Batik Geometris 1 -->
-    <div class="batik-ribbon" style="position:relative; line-height:0;">
-        <svg width="100%" height="26" preserveAspectRatio="none" style="display:block;" aria-hidden="true"><rect width="100%" height="100%" fill="url(#batik-kawung)"></rect></svg>
-        <svg width="64" height="64" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); filter:drop-shadow(0 4px 6px rgba(0,0,0,0.15));" aria-hidden="true"><use href="#batik-medallion"></use></svg>
-    </div>
+    
+    <div class="batik-ribbon"></div>
 
     <!-- Keunggulan Section -->
-    <section id="tentang" class="about">
+    <section id="tentang">
         <div class="section-header">
-            <span class="motif-eyebrow">Kenapa Green Villa Kualu</span>
+            <span class="motif-eyebrow">Mengapa Memilih Kami</span>
             <h2>Keunggulan Green Villa Kualu</h2>
-            <div class="motif-divider" aria-hidden="true"></div>
-            <p class="subtitle">Nilai tambah eksklusif yang menjadikan kami pilihan terbaik untuk hunian keluarga Anda.</p>
+            <div class="motif-divider"></div>
+            <p class="subtitle">Dirancang dengan presisi untuk memenuhi standar gaya hidup modern keluarga Anda, tanpa mengorbankan kenyamanan.</p>
         </div>
         
         <div class="features">
-            <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-home"></i></div><h3>1. Konsep Semi Cluster</h3><p>Mengusung konsep Semi Cluster sehingga lingkungan lebih tertata, nyaman, rapi, dan memiliki fasad modern.</p></div>
-            <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-hand-holding-usd"></i></div><h3>2. Harga Subsidi Terjangkau</h3><p>Sesuai ketentuan rumah subsidi pemerintah, memudahkan Anda memiliki rumah pertama melalui program KPR Subsidi.</p></div>
-            <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-expand-arrows-alt"></i></div><h3>3. Luas Tanah Lebih Lega</h3><p>Tipe <strong>36/108 m²</strong>. Sisa lahan sangat cukup untuk taman depan, halaman belakang, atau area jemur.</p></div>
-            <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-hammer"></i></div><h3>4. Spesifikasi Berkualitas</h3><p>Menggunakan pondasi beton bertulang, dinding bata merah plester, lantai <strong>Granit</strong> elegan, serta atap limas yang kokoh.</p></div>
-            <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-map-marked-alt"></i></div><h3>5. Lokasi Strategis</h3><p>Berada di Desa Kualu, Tambang, Kampar yang berbatasan langsung dengan Pekanbaru. Mobilitas ke berbagai kawasan mudah.</p></div>
-            <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-school"></i></div><h3>6. Dekat Fasilitas Umum</h3><p>Akses cepat menuju pusat pendidikan, faskes, tempat ibadah, pasar, minimarket, dan jalan utama menuju kota.</p></div>
-            <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-landmark"></i></div><h3>7. Terdaftar di Sikumbang</h3><p>Proyek resmi terdaftar di portal Sikumbang BP Tapera pemerintah. Transparan, aman, dan terdata ketat.</p></div>
-            <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-users"></i></div><h3>8. Cocok untuk Keluarga Muda</h3><p>Layout optimal dengan 2 Kamar Tidur, 1 Kamar Mandi, Ruang Tamu, dan Dapur. Ideal bagi pasangan muda.</p></div>
-            <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-chart-line"></i></div><h3>9. Lingkungan Berkembang</h3><p>Berada di area Kualu yang terus maju, menjadikan nilai investasi properti Anda berpotensi meningkat pesat.</p></div>
+            <div class="feature-card">
+                <div class="icon-wrapper"><i class="fas fa-home"></i></div>
+                <h3>Semi Cluster Eksklusif</h3>
+                <p>Lingkungan tertata rapi, sistem keamanan terpadu, dan fasad rumah bergaya modern minimalis yang elegan.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-wrapper"><i class="fas fa-gem"></i></div>
+                <h3>Spesifikasi Premium</h3>
+                <p>Pondasi beton bertulang kokoh, lantai Granit mewah, serta atap limas yang tahan lama dan estetik.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-wrapper"><i class="fas fa-expand-arrows-alt"></i></div>
+                <h3>Luas Tanah Lega</h3>
+                <p>Tipe 36/108 m². Memberikan ruang sisa yang melimpah untuk taman hijau atau pengembangan di masa depan.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-wrapper"><i class="fas fa-map-marked-alt"></i></div>
+                <h3>Lokasi Strategis</h3>
+                <p>Berbatasan langsung dengan Pekanbaru. Aksesibilitas tinggi ke pusat bisnis dan kawasan pendidikan.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-wrapper"><i class="fas fa-tags"></i></div>
+                <h3>Harga Subsidi</h3>
+                <p>Miliki hunian mewah ini melalui kemudahan program KPR Subsidi resmi pemerintah (Terdaftar di Sikumbang).</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-wrapper"><i class="fas fa-chart-line"></i></div>
+                <h3>Investasi Emas</h3>
+                <p>Berada di area satelit yang terus berkembang pesat, menjamin kenaikan nilai properti setiap tahunnya.</p>
+            </div>
         </div>
     </section>
-
-    <!-- Pita Batik Geometris 2 -->
-    <div class="batik-ribbon" style="position:relative; line-height:0;">
-        <svg width="100%" height="26" preserveAspectRatio="none" style="display:block;" aria-hidden="true"><rect width="100%" height="100%" fill="url(#batik-kawung)"></rect></svg>
-        <svg width="64" height="64" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); filter:drop-shadow(0 4px 6px rgba(0,0,0,0.15));" aria-hidden="true"><use href="#batik-medallion"></use></svg>
-    </div>
 
     <!-- Galeri & Video Section -->
     <section id="galeri" class="gallery">
-        <div class="section-header">
-            <span class="motif-eyebrow">Galeri &amp; Video</span>
-            <h2>Galeri Perumahan</h2>
-            <div class="motif-divider" aria-hidden="true"></div>
-            <p class="subtitle">Desain Modern Minimalis untuk Keluarga Masa Kini</p>
-        </div>
+        <div class="gallery-inner">
+            <div class="section-header">
+                <span class="motif-eyebrow">Galeri Visual</span>
+                <h2>Jelajahi Hunian Anda</h2>
+                <div class="motif-divider"></div>
+                <p class="subtitle">Sentuhan desain kontemporer yang memadukan estetika dan fungsionalitas ruang.</p>
+            </div>
 
-        <h3 class="gallery-title"><i class="fas fa-camera"></i> Tampilan Eksterior</h3>
-        <div class="gallery-grid">
-            <img src="img/l1.jpeg" alt="Eksterior Rumah 1">
-            <img src="img/l2.jpeg" alt="Eksterior Rumah 2">
-            <img src="img/l3.jpeg" alt="Eksterior Rumah 3">
-        </div>
+            <h3 class="gallery-title"><i class="fas fa-door-open"></i> Fasad Eksterior</h3>
+            <div class="gallery-grid">
+                <img src="img/l1.jpeg" alt="Eksterior Rumah 1">
+                <img src="img/l2.jpeg" alt="Eksterior Rumah 2">
+                <img src="img/l3.jpeg" alt="Eksterior Rumah 3">
+            </div>
 
-        <h3 class="gallery-title mt-40"><i class="fas fa-couch"></i> Tampilan Interior</h3>
-        <div class="gallery-grid">
-            <img src="img/d1.jpeg" alt="Interior Ruang Tamu">
-            <img src="img/d2.jpeg" alt="Interior Dapur">
-            <img src="img/d3.jpeg" alt="Interior Kamar Mandi">
-        </div>
+            <h3 class="gallery-title" style="margin-top: 50px;"><i class="fas fa-couch"></i> Penataan Interior</h3>
+            <div class="gallery-grid">
+                <img src="img/d1.jpeg" alt="Interior Ruang Tamu">
+                <img src="img/d2.jpeg" alt="Interior Dapur">
+                <img src="img/d3.jpeg" alt="Interior Kamar Mandi">
+            </div>
 
-        <h3 class="gallery-title mt-40"><i class="fas fa-video"></i> Video Review Perumahan</h3>
-        <div class="video-wrapper video-wrapper-wide">
-            <video controls>
-                <source src="img/v.mp4" type="video/mp4">
-                Maaf, browser Anda tidak mendukung pemutaran video ini.
-            </video>
+            <h3 class="gallery-title" style="margin-top: 50px;"><i class="fas fa-play-circle"></i> Video Tour</h3>
+            <div class="video-wrapper">
+                <video controls poster="img/l1.jpeg">
+                    <source src="img/v.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung pemutaran video ini.
+                </video>
+            </div>
         </div>
     </section>
 
+    <div class="batik-ribbon"></div>
+
     <!-- Lokasi Section -->
-    <section id="lokasi" class="location">
+    <section id="lokasi">
         <div class="section-header">
-            <span class="motif-eyebrow">Peta Lokasi</span>
-            <h2>Lokasi Kami</h2>
-            <div class="motif-divider" aria-hidden="true"></div>
-            <p class="subtitle">Perumahan Cluster Green Villa Kualu. Akses mudah ke berbagai fasilitas umum.</p>
+            <span class="motif-eyebrow">Akses & Mobilitas</span>
+            <h2>Lokasi Proyek Kami</h2>
+            <div class="motif-divider"></div>
+            <p class="subtitle">Dikelilingi fasilitas umum pendukung untuk menunjang gaya hidup dinamis keluarga Anda.</p>
         </div>
         
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7205731456766!2d101.36743109999999!3d0.40106440000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5a7ae843797bd%3A0x1105983cef4ff9a5!2sPerumahan%20Cluster%20Green%20Villa%20Kualu!5e0!3m2!1sen!2sid!4v1784694528622!5m2!1sen!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7205731456766!2d101.36743109999999!3d0.40106440000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5a7ae843797bd%3A0x1105983cef4ff9a5!2sPerumahan%20Cluster%20Green%20Villa%20Kualu!5e0!3m2!1sen!2sid!4v1784694528622!5m2!1sen!2sid" width="100%" height="450" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
 
-        <!-- Alamat Tertulis -->
         <div class="address-box">
-            <i class="fas fa-map-marked-alt"></i>
+            <i class="fas fa-map-marker-alt"></i>
             <div>
-                <h4>Alamat Proyek:</h4>
-                <p><strong>Cluster Green Villa Kualu</strong><br>Jl. Tambusai (Arah Kubang Raya), Desa Kualu, Kec. Tambang,<br>Kabupaten Kampar, Riau.</p>
+                <h4>Kantor & Lokasi Proyek</h4>
+                <p><strong>Cluster Green Villa Kualu</strong><br>Jl. Tambusai (Arah Kubang Raya), Desa Kualu, Kec. Tambang, Kabupaten Kampar, Riau.</p>
             </div>
         </div>
     </section>
@@ -334,33 +639,25 @@
     <!-- Kontak Section -->
     <section id="kontak" class="contact">
         <div class="contact-box">
-            <span class="corner-motif corner-motif-tl" aria-hidden="true"></span>
-            <span class="corner-motif corner-motif-tr" aria-hidden="true"></span>
-            <h2>Amankan Unit Anda Sekarang!</h2>
-            <p>Promo <strong>DP Cuma 1 Juta</strong> unit terbatas. Segera hubungi tim marketing kami untuk jadwal survei ke lokasi.</p>
+            <h2>Miliki Unit Anda Hari Ini</h2>
+            <p>Manfaatkan penawaran eksklusif <strong>DP 1 Juta</strong> sebelum kehabisan. Jadwalkan kunjungan pribadi (Private Viewing) Anda dengan konsultan properti kami.</p>
             
             <div class="contact-buttons">
-                <a href="https://wa.me/6281170738999?text=Halo,%20saya%20tertarik%20dengan%20Promo%20DP%201%20Juta%20Perumahan%20Green%20Villa%20Kualu" target="_blank" class="btn-wa btn-outline-wa">
-                    <i class="fab fa-whatsapp" style="font-size: 20px;"></i> WhatsApp
+                <a href="https://wa.me/6281170738999?text=Halo,%20saya%20tertarik%20dengan%20Promo%20DP%201%20Juta%20Perumahan%20Green%20Villa%20Kualu" target="_blank" class="btn-wa">
+                    <i class="fab fa-whatsapp" style="font-size: 20px;"></i> Chat WhatsApp
                 </a>
-                <a href="https://instagram.com/tiaranie_c" target="_blank" class="btn-ig btn-outline-ig">
-                    <i class="fab fa-instagram" style="font-size: 20px;"></i> Instagram
+                <a href="https://instagram.com/tiaranie_c" target="_blank" class="btn-ig">
+                    <i class="fab fa-instagram" style="font-size: 20px;"></i> Ikuti Instagram
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Pita Batik Geometris 3 -->
-    <div class="batik-ribbon" style="position:relative; line-height:0;">
-        <svg width="100%" height="26" preserveAspectRatio="none" style="display:block;" aria-hidden="true"><rect width="100%" height="100%" fill="url(#batik-kawung)"></rect></svg>
-        <svg width="64" height="64" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); filter:drop-shadow(0 4px 6px rgba(0,0,0,0.15));" aria-hidden="true"><use href="#batik-medallion"></use></svg>
-    </div>
-
     <footer>
-        <p>&copy; 2026 Cluster Green Villa Kualu.</p>
+        <p>&copy; 2026 Cluster Green Villa Kualu. All Rights Reserved.</p>
     </footer>
 
-    <!-- Script Burger Menu -->
+    <!-- Script Menu -->
     <script>
         const mobileMenu = document.getElementById('mobile-menu');
         const navLinks = document.getElementById('nav-links');
@@ -375,6 +672,16 @@
                 mobileMenu.classList.remove('active');
                 navLinks.classList.remove('active');
             });
+        });
+
+        // Efek Navbar saat Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar');
+            if(window.scrollY > 50) {
+                nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.08)';
+            } else {
+                nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.03)';
+            }
         });
     </script>
 </body>
